@@ -7,7 +7,7 @@
 
 
 functions (python):
-1. api call for generating resume=jeff
+1. api call for generating resume latex code=jeff (done)
 2. api call for analyzing job = ricardo
 3. latex to pdf = phinhas
 4. user skill input = jameel
