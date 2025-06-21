@@ -1,16 +1,51 @@
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 1rem;
+}
+
+.main{
+    width: 90vw;
+    margin: auto;
+}
+
 .tabs{
+
+    border: none;
+    display: flex;
+    width: 90vw; 
+    margin: auto;
+    height: 350px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.left{
+
+    border: none;
+    display: flex;
+    width: 50%;
+    height: 500px;
+
+}
+
+.right{
 
     border: 1px solid #cccccc;
     display: flex;
+    width: 50%;
+    height: 500px;
 
 }
 
 
 .tabs__sidebar{
 
-    width: 125px;
-    flex-shrink: 0;
+    border: 1px solid #cccccc;
+    width: 30%;
+    height: auto;
     background: #cccccc;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -52,12 +87,19 @@
 
 .tabs__content {
 
-    padding: 15px;
+    border: 1px solid #cccccc;
+    padding: 15px;    
+    width: 100%;              
+    max-width: 600px;        
     font-size: 0.8rem;
     display: none;
+    overflow-y: auto;
 
 }
 
+.tabs__content > :first-child {
+    margin-top: 0;
+}
 
 .tabs__content--active {
 
