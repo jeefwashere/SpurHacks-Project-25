@@ -1,0 +1,235 @@
+\documentclass[10pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Sample Resume},
+    pdfauthor={Sample Author},
+    pdfcreator={LaTeX},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+% Ensure machine-readable PDF
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{times}
+\DeclareUnicodeCharacter{2212}{-}
+
+% Global settings
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+% Custom environments
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0 cm + 10pt
+    ]
+}{\end{itemize}}
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{\end{itemize}}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0cm + 0.00001cm}{0cm + 0.00001cm}
+}{\end{adjustwidth}}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{\par\kern\topsep}
+
+\newcommand{\placelastupdatedtext}{
+  \AddToShipoutPictureFG*{%
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last updated: \today}\hspace{\widthof{Last updated: \today}}
+    }}}%
+  }%
+}%
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+    \placelastupdatedtext
+    
+    \begin{header}
+        \fontsize{40pt}{40pt}\selectfont Jane Smith
+        
+        \vspace{7pt}
+        
+        \normalsize
+        \mbox{City, State}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\href{mailto:your.email@example.com}{your.email@example.com}}%
+        \kern 5.0 pt%
+        \AND%
+        \mbox{\href{tel:+1234567890}{+1 (123) 456-7890}}%
+        \kern 5.0 pt%
+        \AND%
+        \\
+        \mbox{\href{https://yourwebsite.com}{Personal Website}}%
+        \kern 5.0 pt%
+        \AND%
+        \mbox{\href{https://linkedin.com/in/yourprofile}{LinkedIn}}%
+        \kern 5.0 pt%
+        \AND%
+        \mbox{\href{https://github.com/yourusername}{GitHub}}%
+    \end{header}
+    
+    \vspace{-12pt}
+    \section{Skills}
+    \vspace{-13pt}
+    \hrulefill\\
+    \small
+    \begin{onecolentry}
+    \begin{highlights}
+        \item Technical: Python, Java, SQL, Git, \LaTeX, AWS
+        \item Frameworks: Django, React, TensorFlow
+        \item Methods: Agile, TDD, CI/CD
+        \item Soft Skills: Project Management, Team Leadership, Technical Writing
+    \end{highlights}
+    \end{onecolentry}
+    
+    \vspace{-8pt}
+    \section{Education}
+    \vspace{-13pt}
+    \hrulefill
+    \vspace{3pt}
+    \begin{onecolentry}
+    {\normalsize \textbf{University Name}} \hfill {Expected May 2025}\\
+    \vspace{3pt}
+    {Bachelor of Science in Computer Science} \hfill {GPA: 3.8/4.0}\\
+    \textit{Relevant Coursework:} Algorithms, Machine Learning, Distributed Systems\\
+    \end{onecolentry}
+    
+    \vspace{-8pt}
+    \section{Work Experience}
+    \vspace{-12pt}
+    \hrulefill
+    \begin{onecolentry}
+    {\normalsize \textbf{Software Engineering Intern}} \hfill {Jun 2024 – Aug 2024}\\
+    {\textbf{Technology Company}} \hfill {San Francisco, CA}\\
+    \begin{highlights}
+        \item Developed REST APIs using Python/Django, improving service response time by 35\% through query optimization
+        \item Implemented automated testing suite covering 95\% of critical use cases, reducing bug reports by 40\%
+        \item Collaborated with cross-functional teams using Scrum methodology to deliver features 2 weeks ahead of schedule
+        \item Containerized microservices using Docker and deployed to AWS ECS
+    \end{highlights}
+    \end{onecolentry}
+    
+    \begin{onecolentry}
+    {\normalsize \textbf{Research Assistant}} \hfill {Sep 2023 – May 2024}\\
+    {\textbf{University Research Lab}} \hfill {University City, ST}\\
+    \begin{highlights}
+        \item Trained CNN models for medical image classification using TensorFlow
+        \item Published findings in peer-reviewed conference proceedings (co-author)
+        \item Developed data preprocessing pipeline handling 50k+ images using NumPy and OpenCV
+    \end{highlights}
+    \end{onecolentry}
+    
+    \vspace{-8pt}
+    \section{Projects}
+    \vspace{-12pt}
+    \hrulefill
+    \begin{onecolentry}
+    {\normalsize \textbf{Automated Deployment System}} \hfill {\href{https://github.com/sample}{github.com/sample}}\\
+    \begin{highlights}
+        \item Created CI/CD pipeline using Jenkins and Kubernetes to manage cloud deployments
+        \item Reduced deployment failures by 70\% through automated rollback mechanisms
+        \item Implemented monitoring with Prometheus/Grafana dashboards tracking 15+ system metrics
+    \end{highlights}
+    \end{onecolentry}
+    
+    \begin{onecolentry}
+    {\normalsize \textbf{Mobile Health Application}} \hfill {\href{https://example.app}{example.app}}\\
+    \begin{highlights}
+        \item Led 4-person team building React Native app for patient health tracking
+        \item Integrated HIPAA-compliant FHIR API for medical data interoperability
+        \item Achieved 4.8/5 rating on app stores with 10k+ downloads in first 3 months
+    \end{highlights}
+    \end{onecolentry}
+    
+\end{document}
