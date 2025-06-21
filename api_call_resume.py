@@ -1,29 +1,13 @@
-# from google import genai
-# import os
-# from dotenv import load_dotenv
-
-# # Assigning api key env variable to a local variable
-# GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-
-# # The AI model used
-# client = genai.Client(api_key=GEMINI_API_KEY)
-
-# # Response mechanism for AI prompt
-# response = client.models.generate_content(
-#     model="gemini-2.5-flash",
-#     contents=f"""Generate latex code for a resume based on these specifications:
-#     %%%PLACEHOLDER%%%
-#     """,
-# )
-
-# print(response.text)
-
 ### DEEPSEEK ###
 from openai import OpenAI
 import os
+from dotenv import load_dotenv
+
+# Loads the environment file
+load_dotenv()
 
 # Deepseek R1 Free API
-DEEPSEEK_R1_API_FREE = os.environ.get("DEEPSEEK_R1_API_FREE")
+DEEPSEEK_R1_API_FREE = os.getenv("DEEPSEEK_R1_API_FREE")
 
 # Clientside
 client = OpenAI(
