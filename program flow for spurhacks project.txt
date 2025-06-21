@@ -1,0 +1,15 @@
+1. user opens website
+2. User clicks on extension
+3. Extension scans for skills required in job app
+4. Extension gives user the option to go to website
+5. The website generates a new resume based on skills you know and skills needed for job
+6. website converts latex to pdf
+
+
+functions (python):
+1. api call for generating resume=jeff
+2. api call for analyzing job = ricardo
+3. latex to pdf = phinhas
+4. user skill input = jameel
+5. index.html style.css = jameel
+6. pop-ricardo
