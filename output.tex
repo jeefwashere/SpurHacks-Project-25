@@ -1,7 +1,5 @@
 \documentclass[10pt, letterpaper]{article}
 \usepackage[utf8]{inputenc}
-
-% Packages:
 \usepackage[
     ignoreheadfoot,
     top=2 cm,
@@ -19,9 +17,9 @@
 \usepackage{fontawesome5}
 \usepackage{amsmath}
 \usepackage[
-    pdftitle={Sample Resume},
-    pdfauthor={Sample Author},
-    pdfcreator={LaTeX},
+    pdftitle={John Doe's CV},
+    pdfauthor={John Doe},
+    pdfcreator={LaTeX with RenderCV},
     colorlinks=true,
     urlcolor=primaryColor
 ]{hyperref}
@@ -35,7 +33,6 @@
 \usepackage{needspace}
 \usepackage{iftex}
 
-% Ensure machine-readable PDF
 \ifPDFTeX
     \input{glyphtounicode}
     \pdfgentounicode=1
@@ -47,7 +44,6 @@
 \usepackage{times}
 \DeclareUnicodeCharacter{2212}{-}
 
-% Global settings
 \raggedright
 \AtBeginEnvironment{adjustwidth}{\partopsep0pt}
 \pagestyle{empty}
@@ -57,10 +53,15 @@
 \setlength{\columnsep}{0.15cm}
 \pagenumbering{gobble}
 
-\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
-\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\titlespacing{\section}{
+    -1pt
+}{
+    0.3 cm
+}{
+    0.2 cm
+}
 
-% Custom environments
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
 \newenvironment{highlights}{
     \begin{itemize}[
         topsep=0.10 cm,
@@ -69,7 +70,9 @@
         itemsep=0pt,
         leftmargin=0 cm + 10pt
     ]
-}{\end{itemize}}
+}{
+    \end{itemize}
+}
 
 \newenvironment{highlightsforbulletentries}{
     \begin{itemize}[
@@ -79,11 +82,19 @@
         itemsep=0pt,
         leftmargin=10pt
     ]
-}{\end{itemize}}
+}{
+    \end{itemize}
+}
 
 \newenvironment{onecolentry}{
-    \begin{adjustwidth}{0cm + 0.00001cm}{0cm + 0.00001cm}
-}{\end{adjustwidth}}
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+}
 
 \newenvironment{twocolentry}[2][]{
     \onecolentry
@@ -110,18 +121,9 @@
 
 \newenvironment{header}{
     \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
-}{\par\kern\topsep}
-
-\newcommand{\placelastupdatedtext}{
-  \AddToShipoutPictureFG*{%
-    \put(
-        \LenToUnit{\paperwidth-2 cm-0 cm+0.05cm},
-        \LenToUnit{\paperheight-1.0 cm}
-    ){\vtop{{\null}\makebox[0pt][c]{
-        \small\color{gray}\textit{Last updated: \today}\hspace{\widthof{Last updated: \today}}
-    }}}%
-  }%
-}%
+}{
+    \par\kern\topsep
+}
 
 \begin{document}
     \newcommand{\AND}{\unskip
@@ -131,105 +133,110 @@
     \newsavebox\ANDbox
     \sbox\ANDbox{$|$}
 
-    \placelastupdatedtext
-    
     \begin{header}
-        \fontsize{40pt}{40pt}\selectfont Jane Smith
-        
-        \vspace{7pt}
-        
+        \fontsize{ 40 pt}{40 pt}\selectfont Ricardo Gao
+
+        \vspace{7 pt}
+
         \normalsize
-        \mbox{City, State}%
+        \mbox{Waterloo,ON}%
         \kern 5.0 pt%
         \AND%
         \kern 5.0 pt%
-        \mbox{\href{mailto:your.email@example.com}{your.email@example.com}}%
+        \mbox{\href{mailto:gaozhe0011@gmail.com}{gaozhe0011@gmail.com}}%
         \kern 5.0 pt%
         \AND%
-        \mbox{\href{tel:+1234567890}{+1 (123) 456-7890}}%
+        \mbox{\href{tel:+13828852156}{+1 382 885 2156}}%
         \kern 5.0 pt%
         \AND%
-        \\
-        \mbox{\href{https://yourwebsite.com}{Personal Website}}%
+                \\
+        \mbox{\href{https://www.ricardogao.me/}{Personal Website}}%
         \kern 5.0 pt%
         \AND%
-        \mbox{\href{https://linkedin.com/in/yourprofile}{LinkedIn}}%
+        \mbox{\href{https://www.linkedin.com/in/ricardo-gao}{Linkedin}}%
         \kern 5.0 pt%
         \AND%
-        \mbox{\href{https://github.com/yourusername}{GitHub}}%
+        \mbox{\href{https://github.com/RicadoGz}{Github}}%
+        
     \end{header}
-    
     \vspace{-12pt}
-    \section{Skills}
-    \vspace{-13pt}
-    \hrulefill\\
-    \small
-    \begin{onecolentry}
+\vspace{-12pt}
+ \section{Skills}
+ \vspace{-13pt}
+\hrulefill\\
+\small
+\begin{onecolentry}
+\begin{highlights}
+    \item Technical Skills: \textbf{HTML},\textbf{CSS},\textbf{JavaScript},\textbf{C\#},C,python,Microsoft Office (Word, Outlook, Teams, PowerPoint), SharePoint, Power BI
+    \item Project \& Organizational Skills: Leadership, Stakeholder Engagement, Peer Mentoring, Planning, Time Management
+    \item Analytical Skills: Research and Analysis, Problem Solving, Performance Tracking
+    \item Communication Skills: Internal Communication, Interpersonal Communication, Customer Service
+\end{highlights}
+
+\end{onecolentry}
+
+
+ \vspace{-8pt}
+ \section{Education}
+\vspace{-13pt}
+\hrulefill
+\vspace{+3pt}
+\begin{onecolentry}
+ {\normalsize \textbf{Conestoga College}} \hfill {2024 Sep - Dec 2028}\\
+ \vspace{+3pt}
+ {Software Engineering Technology} \hfill {3.93/4.0}\\
+  \vspace{-8pt}\end{onecolentry}
+ 
+\section{Professional Experience}
+\vspace{-12pt}
+\hrulefill
+\begin{onecolentry}
+    {\normalsize \textbf{Peer-Assisted Learning Leader for C Programming}} \hfill {(Jan 2025 – Apr 2025)}\\
+    {Conestoga College} \hfill {Waterloo, ON}\\
     \begin{highlights}
-        \item Technical: Python, Java, SQL, Git, \LaTeX, AWS
-        \item Frameworks: Django, React, TensorFlow
-        \item Methods: Agile, TDD, CI/CD
-        \item Soft Skills: Project Management, Team Leadership, Technical Writing
+        \item Utilized \textbf{SharePoint} to manage and distribute course materials, consistently uploading \textbf{at least 4 resources weekly over 14 weeks}
+        \item Created \textbf{session plans using Microsoft Word}, preparing \textbf{two plans per week} to guide peer learning sessions
+        \item Facilitated communication with students via \textbf{Microsoft Teams}, providing real-time support and feedback
+        \item Helped student improve quiz score from \textbf{20\% to 90\%} and assignment grade from \textbf{40\% to 99.5\%} within 6 weeks
+        \item Utilized \textbf{Power BI} to visualize student attendance and performance data for continuous improvement
     \end{highlights}
-    \end{onecolentry}
-    
-    \vspace{-8pt}
-    \section{Education}
-    \vspace{-13pt}
-    \hrulefill
-    \vspace{3pt}
-    \begin{onecolentry}
-    {\normalsize \textbf{University Name}} \hfill {Expected May 2025}\\
-    \vspace{3pt}
-    {Bachelor of Science in Computer Science} \hfill {GPA: 3.8/4.0}\\
-    \textit{Relevant Coursework:} Algorithms, Machine Learning, Distributed Systems\\
-    \end{onecolentry}
-    
-    \vspace{-8pt}
-    \section{Work Experience}
-    \vspace{-12pt}
-    \hrulefill
-    \begin{onecolentry}
-    {\normalsize \textbf{Software Engineering Intern}} \hfill {Jun 2024 – Aug 2024}\\
-    {\textbf{Technology Company}} \hfill {San Francisco, CA}\\
+\end{onecolentry}
+
+\begin{onecolentry}
+    {\normalsize \textbf{Executive Leader}} \hfill {(Oct \textbf{2024} – Present)}\\
+    {Google Developer Group} \hfill {Waterloo, ON}\\
     \begin{highlights}
-        \item Developed REST APIs using Python/Django, improving service response time by 35\% through query optimization
-        \item Implemented automated testing suite covering 95\% of critical use cases, reducing bug reports by 40\%
-        \item Collaborated with cross-functional teams using Scrum methodology to deliver features 2 weeks ahead of schedule
-        \item Containerized microservices using Docker and deployed to AWS ECS
+        \item Organized \textbf{5+} tech events with \textbf{30+ attendees each} focusing on applied learning
+        \item Collaborated with \textbf{college clubs} and \textbf{Wilfrid Laurier University} for co-hosted workshops
+        \item Managed resources using \textbf{SharePoint}, \textbf{Google Drive}, and \textbf{PowerPoint}
+        \item Maintained \textbf{80\%+ attendance} in weekly leadership meetings
+        \item Grew community to \textbf{500+ members} – largest student group at Conestoga College
     \end{highlights}
-    \end{onecolentry}
-    
-    \begin{onecolentry}
-    {\normalsize \textbf{Research Assistant}} \hfill {Sep 2023 – May 2024}\\
-    {\textbf{University Research Lab}} \hfill {University City, ST}\\
+\end{onecolentry}
+
+\vspace{-12pt}
+\section{Project Experience}
+\vspace{-12pt}
+\hrulefill\\
+\begin{onecolentry}
+    {\normalsize \textbf{Personal Website Developer}} \hfill {(May 2024 – Present)}\\
+    {Self-Initiated Project} \hfill {Waterloo, ON}\\
     \begin{highlights}
-        \item Trained CNN models for medical image classification using TensorFlow
-        \item Published findings in peer-reviewed conference proceedings (co-author)
-        \item Developed data preprocessing pipeline handling 50k+ images using NumPy and OpenCV
+        \item Built responsive portfolio using \textbf{HTML}, \textbf{CSS}, \textbf{JavaScript} with \textbf{Flexbox/Grid}
+        \item Deployed via \textbf{GitHub Pages} with performance optimizations
+        \item Continuously updated content reflecting latest achievements
     \end{highlights}
-    \end{onecolentry}
-    
-    \vspace{-8pt}
-    \section{Projects}
-    \vspace{-12pt}
-    \hrulefill
-    \begin{onecolentry}
-    {\normalsize \textbf{Automated Deployment System}} \hfill {\href{https://github.com/sample}{github.com/sample}}\\
+\end{onecolentry}
+
+\begin{onecolentry}
+    {\normalsize \textbf{C\# Vehicle Management System}} \hfill {(Jan 2025 – Mar 2025)}\\
+    {Academic Project} \hfill {Conestoga College}\\
     \begin{highlights}
-        \item Created CI/CD pipeline using Jenkins and Kubernetes to manage cloud deployments
-        \item Reduced deployment failures by 70\% through automated rollback mechanisms
-        \item Implemented monitoring with Prometheus/Grafana dashboards tracking 15+ system metrics
+        \item Developed system using \textbf{C\#/.NET} implementing \textbf{OOP principles} and \textbf{design patterns}
+        \item Created custom comparers via \texttt{IComparable} for vehicle sorting
+        \item Designed \textbf{repository pattern} with \textbf{dependency injection} for separation of concerns
+        \item Integrated data visualizations saving \textbf{30\%+} manual processing time
     \end{highlights}
-    \end{onecolentry}
-    
-    \begin{onecolentry}
-    {\normalsize \textbf{Mobile Health Application}} \hfill {\href{https://example.app}{example.app}}\\
-    \begin{highlights}
-        \item Led 4-person team building React Native app for patient health tracking
-        \item Integrated HIPAA-compliant FHIR API for medical data interoperability
-        \item Achieved 4.8/5 rating on app stores with 10k+ downloads in first 3 months
-    \end{highlights}
-    \end{onecolentry}
-    
+\end{onecolentry}
+
 \end{document}

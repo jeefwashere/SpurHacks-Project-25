@@ -4,6 +4,7 @@ import os
 import platform
 from openai import OpenAI
 from dotenv import load_dotenv
+from flask import Flask
 
 # Loads the environment file
 load_dotenv()
