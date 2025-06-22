@@ -1,9 +1,0 @@
-{
-    "manifest_version": 3,
-    "name": "Resume Generator",
-    "version": "1.0.0",
-    "description": "An extension that generates a resume tailored to the posting's needs",
-    "icons": {
-        "32": "assets/images/favicon-32x32.png"
-    }
-}
