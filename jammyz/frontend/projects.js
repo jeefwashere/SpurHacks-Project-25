@@ -1,65 +1,47 @@
 // adding jobs bullshit
 let projectData = [];
-
 // [{
 //   title: '',
 //   skills: [ {name: '',  description: ''} ]
 // }]
-
 function createProject(index) {
-  const container = document.createElement("div");
-  container.classList.add("project-entry");
-
-  container.innerHTML = `
-    <label>Project title:</label>
-    <input type="text" class="projecttitle" placeholder="Titan Slayer">
-    <button class="remove-project" type="button"><img src="/assets/images/garbage.png" height = 15px></button>
-    <br>
-    <label>Select Skill:</label>
-    <select class="skill-select"></select>
-
-    <div class="active-skill-editor"></div>
-
-    <button class="add-skill" type="button">Add Skill</button>
-    <hr>
-  `;
-
-
-   // Hook up removal
-   container.querySelector(".remove-project").addEventListener("click", () => {
-       projectData.splice(index, 1);
-       container.remove();
-   });
-
-
-   
+    const container = document.createElement("div");
+    container.classList.add("project-entry");
+    container.innerHTML = `
+        <label class="entry-title">Project Title</label>
+        <input type="text" class="projecttitle styled" placeholder="Name of Project">
+        <button class="remove-project button" id="delete-button" type="button"><img src="/assets/images/trash.png" id="garbagePNG"></button>
+        <br>
+        <label class="subEntry-title">Select Skill:</label>
+        <select class="skill-select"></select>
+        <div class="active-skill-editor"></div>
+        <button class="add-skill button" id="skill-button" type="button">Add Skill</button>
+        <hr>
+    `;
+    // Hook up removal
+    container.querySelector(".remove-project").addEventListener("click", () => {
+        projectData.splice(index, 1);
+        container.remove();
+    });
     //init
     projectData.push({ title: "", skills: [] });
-
     //  sync job title input to jobData
     const titleInput = container.querySelector(".projecttitle");
     titleInput.addEventListener("input", () => {
         projectData[index].title = titleInput.value;
     });
-    
-    // Hook up skill-related event garbage
+    // Hook up skill-related event 
     const addSkillBtn = container.querySelector(".add-skill");
     const skillSelect = container.querySelector(".skill-select");
     const projectSkills = projectData[index].skills;
-
     addSkillBtn.addEventListener("click", () => {
         addSkill(projectSkills, container);
     });
-
     skillSelect.addEventListener("change", () => {
         switchToProjectSkill(projectSkills, container);
     });
- 
-    
   return container;
 }
-
-
 function addSkill(skillData, container){
     skillSelect = container.querySelector(".skill-select")
     skillData.push({name: '', description: '' });
@@ -68,7 +50,6 @@ function addSkill(skillData, container){
     switchToProjectSkill(skillData, container);
 
 }
-
 // refresh the dropdown skill select
 function updateProjectSkillSelect(skillData, skillSelect){
     skillSelect.innerHTML = '';
@@ -79,7 +60,6 @@ function updateProjectSkillSelect(skillData, skillSelect){
         skillSelect.appendChild(option);
     });
 }
-
 // switch to a skill
 function switchToProjectSkill(skillData, container){
     const skillSelect = container.querySelector(".skill-select");
@@ -91,11 +71,9 @@ function switchToProjectSkill(skillData, container){
         <textarea class="skill-description" placeholder="Describe how you used this skill" >${skill.description}</textarea>
         <button class="remove-skill" type="button">Remove Skill</button>
     `;
-
     const skillName = editor.querySelector(".skill-name")
     const skillDesc = editor.querySelector(".skill-description")
     const removeSkillBtn = editor.querySelector(".remove-skill")
-    
     skillName.addEventListener("input", () => {
         skillData[index].name = skillName.value;
         updateProjectSkillSelect(skillData, skillSelect);
@@ -116,12 +94,10 @@ function updateProjectSkillName(skillData, skillSelect, newName) {
     updateProjectSkillSelect(skillData, skillSelect);
     skillSelect.selectedIndex = index
   }
-  
 // Update skill description
 function updateProjectSkillDesc(skillData, index, newDesc) {
     skillData[index].description = newDesc;
 }
-
 // remove project from fucking the project-entries
 function removeProject() {
     const projectForm = document.querySelector("#job-form");
@@ -132,7 +108,6 @@ function removeProject() {
       projectData.pop();
     }   
 }
-
 // Remove a skill
 function removeProjectSkill(skillData, container) {
     const editor = container.querySelector(".active-skill-editor")
@@ -147,31 +122,21 @@ function removeProjectSkill(skillData, container) {
         editor.innerHTML = '';
     }
 }
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const projectTab = document.querySelector('[data-tab="3"]');
     const addProjectBtn = projectTab.querySelector(".add-project");
     const removeProjectBtn = projectTab.querySelector(".remove-project")
     const projectForm = projectTab.querySelector("#project-form");
-
     // Event listener to add jobs
     addProjectBtn.addEventListener("click", () => {
         const index = projectData.length;
         const jobEntry = createProject(index);
         projectForm.appendChild(jobEntry);
     });
-
-    
-
     // Add one default job entry on load
     addProjectBtn.click();
-
-
     removeProjectBtn.addEventListener("click", () => {
         removeProject();
     })
-    
-  
-
 });
