@@ -22,4 +22,10 @@
 
 .env
 
+# Ignore resume-related files
+.log
+.aux
+.pdf
+.tex
+
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
