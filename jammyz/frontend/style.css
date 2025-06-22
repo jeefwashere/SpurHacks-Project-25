@@ -206,6 +206,7 @@ input.jobTitle:focus{
     height: 15px;
 }
 .skill-description{
+    width: 40%;
     margin-top: 5px;
     background: transparent;
     color: #ffffff;
@@ -228,7 +229,6 @@ input.projecttitle {
     margin-bottom: 10px;
     transition: 0.2s ease;
     z-index: 1111;
-
 }
 input.projecttitle:focus{
     color: #e9ece8;
