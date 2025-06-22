@@ -24,16 +24,9 @@ function setupTabs(){
 
 document.addEventListener("DOMContentLoaded", () => {
     setupTabs();
-
     document.querySelectorAll(".tabs").forEach(tabContainer => {
-        //tabContainer.querySelector(".tabs__sidebar .tabs__button").click();
-        const buttons = tabContainer.querySelectorAll(".tabs__sidebar .tabs__button");
-    
-        if (buttons.length >= 2) {
-            buttons[4].click(); // 👈 Index 1 is the second button
-        }
+        tabContainer.querySelector(".tabs__sidebar .tabs__button").click();
     })
-
     
 });
 
