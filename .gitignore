@@ -20,6 +20,7 @@
 .history
 .ionide
 
+# Ignore env files
 .env
 
 # Ignore resume-related files

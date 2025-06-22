@@ -13,7 +13,6 @@ app = Flask(__name__)
 # Constant for output file name
 OUTPUT_FILE_NAME = "output.tex"
 
-
 def latex_escape(text):
     replacements = {
         "&": r"\&",
@@ -116,7 +115,6 @@ def latexToPdf(fileName):
         os.startfile(pdfFile)
     else:
         print("OS incompatible. Windows only.")
-
 
 @app.route("/process_data", methods=["POST"])
 def process_data():
