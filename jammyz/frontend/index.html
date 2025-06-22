@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garbage</title>
     <link rel="stylesheet" href="style.css">
+    <script src="projects.js" defer></script>
     <script src="script.js" defer></script>
+    
 </head>
 
 <body>
@@ -18,9 +20,9 @@
                 <div class="tabs__sidebar">
                     <button class="tabs__button" data-for-tab="1">Personal Information</button>
                     <button class="tabs__button" data-for-tab="2">Job Experience</button>
-                    <button class="tabs__button" data-for-tab="3">Skills</button>
-                    <button class="tabs__button" data-for-tab="4">Projects</button>
-                    <button class="tabs__button" data-for-tab="5">Education</button>
+                    <button class="tabs__button" data-for-tab="3">Projects</button>
+                    <button class="tabs__button" data-for-tab="4">Education</button>
+                    <button id="submit-all" type="button">Submit All Info</button>
                 </div>
                 <div class="tabs__content tabs__content--active" data-tab="1">
                     <h1>Personal Information</h1>
@@ -43,35 +45,72 @@
 
                         <br>
                         <label for="linkedin">LinkedIn (optional): </label>
-                        <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/erenyeager">
+                        <input type="url" id="linkedin" name="Linkedin" placeholder="https://linkedin.com/in/erenyeager">
+                        
+                        <br>
+                        <label for="github">Github (optional): </label>
+                        <input type="url" id="github" name="Github" placeholder="https://github.com/erenyeager">
+
+                        <br>
+                        <input type = "reset">
 
                     </form>
                 </div>
                 <div class="tabs__content" data-tab="2">
                     <h1>Job Experience</h1>
-                    <button class="add-job" type="button">+</button>
                     
                     
                     <form action="index.php" method="GET" id="job-form">
-                        <button class="remove-job" type="button">-</button>
                         <div class="active-skill-editor">
                             <!-- dynamically shows skill name + description -->
                         </div>
 
-                        
 
                     </form>
+
+                    <button class="add-job" type="button">Add Experience</button>
                         
                     
                 </div>
                 <div class="tabs__content" data-tab="3">
-                    <h1>Skills</h1>
+                    <h1>Projects</h1>
+
+                    <form action="index.php" method="GET" id="project-form">
+                        <div class="active-skill-editor">
+                            <!-- dynamically shows skill name + description -->
+                        </div>
+
+                    </form>
+
+                    <button class="add-project" type="button">Add Project</button>
                 </div>
                 <div class="tabs__content" data-tab="4">
-                    <h1>Projects</h1>
-                </div>
-                <div class="tabs__content" data-tab="5">
                     <h1>Education</h1>
+
+                    <label for ="schoolname">School name: </label>
+                    <input type = "text" id = "schoolname" placeholder = "Wilfrid Laurier University" required>
+
+                    <br>
+                    <label for ="major">Major: </label>
+                    <input type = "text" id = "major" placeholder = "Computer Science" required>
+                    
+                    <br>
+                    <label for ="degreetype">Degree type: </label>
+                    <input type = "text" id = "degreetype" placeholder = "Bachelor's" required>
+
+                    <br>
+                    <label for ="gpa">GPA: </label>
+                    <input type = "text" id = "gpa" placeholder = "GPA" required>
+                    
+                    <br>
+                    <label for ="startdate">Start Date: </label>
+                    <input type = "month" id = "startdate" required>
+
+                    <br>
+                    <label for ="enddate">End Date: </label>
+                    <input type = "month" id = "enddate" required>
+
+
                 </div>
             </div>
 

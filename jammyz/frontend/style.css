@@ -40,10 +40,10 @@ h1 {
 
 .tabs__sidebar{
 
-    border: 1px solid #cccccc;
+    border: none;
     width: 30%;
     height: auto;
-    background: #cccccc;
+    background: #ffffff;
     display: flex;
     flex-direction: column;
 
@@ -102,7 +102,18 @@ h1 {
 }
 
 .tabs__content--active {
-
     display: block;
+}
 
+.add-job {
+    margin-left: 35%;
+}
+.remove-job{
+    margin-left: 35%;
+}
+.remove-project{
+    margin-left: 29.5%;
+}
+.add-project {
+    margin-left: 35%;
 }
