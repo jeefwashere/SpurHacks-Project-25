@@ -154,7 +154,7 @@ def generate_latex(jobSkills, userSkills):
                 "role": "system",
                 "content": r"""You are an expert LaTeX resume writer. Generate a FULL LaTeX resume document (including \\documentclass, \\begin{document}, etc.). Structure it like this:
 **Rules:**
-1. Return strictly ONLY LaTeX code (Strictly no ``` and ```latex or explanations).
+1. Return strictly  PURELY ONLY LaTeX code (Strictly no ``` and ```latex or explanations).
 2. Ensure the document compiles without errors.
 3. Strictly tailor the generated resume's skills to the skills required by the job description.
 4. Keep formatting clean and professional.
@@ -462,7 +462,7 @@ def generate_latex(jobSkills, userSkills):
 **User Skills:**
 {user_skills_str}
 
-Generate a full LaTeX resume with a skills section optimized for this job. Only give pure latex code and nothing else. STRICTLY NO ``` and ```latex.""",
+Generate a full LaTeX resume with a skills section optimized for this job. Only give pure latex code and nothing else. STRICTLY DO NOT PUT ``` AND ```latex ON THE FILE.""",
             },
         ],
         stream=False,
