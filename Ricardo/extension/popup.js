@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Use fetch to send data to the Flask server
-    fetch('http://127.0.0.1:5000/analyze', {
+    fetch('http://127.0.0.1:5000/process_data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

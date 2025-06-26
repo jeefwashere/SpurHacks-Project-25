@@ -243,7 +243,7 @@ def process_data():
         print(f"✅ /process_data: generate_latex returned file: {ai_skills_snippet_file}")
 
         # 3. Read the full resume template
-        full_template_path = os.path.join(os.getcwd(), 'full_resume_template.txt') # Ensure this path is correct
+        full_template_path = os.path.join(os.getcwd(), 'full_resume_template.tex') # Ensure this path is correct
         if not os.path.exists(full_template_path):
              print(f"❌ /process_data: Full resume template not found at {full_template_path}")
              return jsonify({"error": f"Full resume template not found at {full_template_path}"}), 500
