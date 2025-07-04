@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbage</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+SC&display=swap" rel="stylesheet">
+    <script src="projects.js" defer></script>
+    <script src="script.js" defer></script>
+    
+</head>
+<body>
+    <div class="main">
+        <h1>Tailored Resume Builder</h1>
+        <hr>
+        <div class="tabs">
+            <div class="left">
+                <div class="tabs__sidebar">
+                    <button class="tabs__button" data-for-tab="1">Personal Information</button>
+                    <button class="tabs__button" data-for-tab="2">Job Experience</button>
+                    <button class="tabs__button" data-for-tab="3">Projects</button>
+                    <button class="tabs__button" data-for-tab="4">Education</button>
+                    <button id="submit-all" class="button" type="button">Submit All Info</button>
+                </div>
+                <div class="tabs__content" data-tab="1">
+                    <h1>Personal Information</h1><hr class="heading-divider">
+                    <form action="index.php" method="GET">
+                        <label for ="fullname" class="personalInfo">Full name: </label>
+                        <input type = "text" id = "username" required class="styled" placeholder="Enter name">
+                        <br>
+                        <label for = "email" class="personalInfo">Email address: </label>
+                        <input type = "email" id = "email" required class="styled" placeholder="Email addrress"> 
+                        <br>
+                        <label for = "phone" class="personalInfo">Phone: </label>
+                        <input type = "tel" id = "phone" required pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}" class="styled" placeholder="123-456-7890"> 
+                        <br>
+                        <label for = "birthdate" class="personalInfo">Birthdate: </label>
+                        <input type = "date" id = "birthdate" required class="styled"> 
+                        <br>
+                        <label for="linkedin" class="personalInfo">LinkedIn (optional): </label>
+                        <input type="url" id="linkedin" name="Linkedin" class="styled" required placeholder="https://linkedin.com/example">
+                        <br>
+                        <label for="github" class="personalInfo">Github (optional): </label>
+                        <input type="url" id="github" name="Github" class="styled" required placeholder="https://github.com/example">
+                        <br>
+                        <input type = "reset" id="personalInfo-reset" class="button">
+                    </form>
+                </div>
+                <div class="tabs__content" data-tab="2">
+                    <h1>Job Experience</h1><hr class="heading-divider">
+                    <form action="index.php" method="GET" id="job-form">
+                        <div class="active-skill-editor">
+                            <!-- dynamically shows skill name + description -->
+                        </div>
+                    </form>
+                    <button class="add-job button" id="addJob-button" type="button">Add Experience</button>
+                </div>
+                <div class="tabs__content" data-tab="3">
+                    <h1>Projects</h1><hr class="heading-divider">
+                    <form action="index.php" method="GET" id="project-form">
+                        <div class="active-skill-editor">
+                            <!-- dynamically shows skill name + description -->
+                        </div>
+                    </form>
+                    <button class="add-project button" id="addJob-button" type="button">Add Project</button>
+                </div>
+                <div class="tabs__content" data-tab="4">
+                    <h1>Education</h1><hr class="heading-divider">
+                    <form action="index.php" method="GET">
+                        <label for ="schoolname" class="personalInfo">School name: </label>
+                        <input type = "text" id = "schoolname" placeholder = "Wilfrid Laurier University" required class="styled">
+                        <br>
+                        <label for ="major" class="personalInfo">Major: </label>
+                        <input type = "text" id = "major" placeholder = "Computer Science" required class="styled"> 
+                        <br>
+                        <label for ="degreetype" class="personalInfo">Degree type: </label>
+                        <input type = "text" id = "degreetype" placeholder = "Bachelor's" required class="styled">
+                        <br>
+                        <label for ="gpa" class="personalInfo">GPA: </label>
+                        <input type = "text" id = "gpa" placeholder = "GPA" required class="styled">
+                        <br>
+                        <label for ="startdate" class="personalInfo">Start Date: </label>
+                        <input type = "month" id = "startdate" required class="styled">
+                        <br>
+                        <label for ="enddate" class="personalInfo">End Date: </label>
+                        <input type = "month" id = "enddate" required class="styled">
+                        <input type = "reset" id="personalInfo-reset" class="button">
+                    </form>
+                </div>
+            </div>
+            <div class="right">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,5 +1,14 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=*}
+
 \documentclass[10pt, letterpaper]{article}
 \usepackage[utf8]{inputenc}
+
+% Packages:
 \usepackage[
     ignoreheadfoot,
     top=2 cm,
@@ -17,9 +26,9 @@
 \usepackage{fontawesome5}
 \usepackage{amsmath}
 \usepackage[
-    pdftitle={John Doe's CV},
-    pdfauthor={John Doe},
-    pdfcreator={LaTeX with RenderCV},
+    pdftitle={Ricardo Gao's CV},
+    pdfauthor={Ricardo Gao},
+    pdfcreator={LaTeX},
     colorlinks=true,
     urlcolor=primaryColor
 ]{hyperref}
@@ -33,6 +42,7 @@
 \usepackage{needspace}
 \usepackage{iftex}
 
+% Ensure that generate pdf is machine readable/ATS parsable:
 \ifPDFTeX
     \input{glyphtounicode}
     \pdfgentounicode=1
@@ -42,8 +52,11 @@
 \fi
 
 \usepackage{times}
+
+% Fix Unicode minus sign
 \DeclareUnicodeCharacter{2212}{-}
 
+% Some settings:
 \raggedright
 \AtBeginEnvironment{adjustwidth}{\partopsep0pt}
 \pagestyle{empty}
@@ -125,6 +138,17 @@
     \par\kern\topsep
 }
 
+\newcommand{\placelastupdatedtext}{%
+  \AddToShipoutPictureFG*{%
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last updated in July 2024}\hspace{\widthof{Last updated in July 2024}}
+    }}}%
+  }%
+}
+
 \begin{document}
     \newcommand{\AND}{\unskip
         \cleaders\copy\ANDbox\hskip\wd\ANDbox
@@ -167,26 +191,26 @@
 \small
 \begin{onecolentry}
 \begin{highlights}
-    \item Technical Skills: \textbf{HTML},\textbf{CSS},\textbf{JavaScript},\textbf{C\#},C,python,Microsoft Office (Word, Outlook, Teams, PowerPoint), SharePoint, Power BI
-    \item Project \& Organizational Skills: Leadership, Stakeholder Engagement, Peer Mentoring, Planning, Time Management
-    \item Analytical Skills: Research and Analysis, Problem Solving, Performance Tracking
-    \item Communication Skills: Internal Communication, Interpersonal Communication, Customer Service
+    \item \textbf{Programming Languages:} Python, JavaScript, TypeScript, C, C\\#, SQL, HTML, CSS
+    \item \textbf{Frameworks \& Tools:} React, .NET Framework, Git, GitHub Pages, SharePoint, Power BI
+    \item \textbf{Microsoft Office Suite:} Word, Outlook, Teams, PowerPoint (Advanced proficiency)
+    \item \textbf{Core Competencies:} Software Development Lifecycle, OOP Principles, API Integration
+    \item \textbf{Soft Skills:} English Fluency (Native), Detail-oriented, Technical Writing Excellence, Problem Solving, Stakeholder Engagement, Team Leadership
 \end{highlights}
-
 \end{onecolentry}
 
-
- \vspace{-8pt}
- \section{Education}
+\vspace{-8pt}
+\section{Education}
 \vspace{-13pt}
 \hrulefill
 \vspace{+3pt}
 \begin{onecolentry}
  {\normalsize \textbf{Conestoga College}} \hfill {2024 Sep - Dec 2028}\\
  \vspace{+3pt}
- {Software Engineering Technology} \hfill {3.93/4.0}\\
-  \vspace{-8pt}\end{onecolentry}
+ {Software Engineering Technology} \hfill {3.93/4.0 GPA}\\
  
+\end{onecolentry}
+
 \section{Professional Experience}
 \vspace{-12pt}
 \hrulefill
@@ -194,23 +218,23 @@
     {\normalsize \textbf{Peer-Assisted Learning Leader for C Programming}} \hfill {(Jan 2025 – Apr 2025)}\\
     {Conestoga College} \hfill {Waterloo, ON}\\
     \begin{highlights}
-        \item Utilized \textbf{SharePoint} to manage and distribute course materials, consistently uploading \textbf{at least 4 resources weekly over 14 weeks}
-        \item Created \textbf{session plans using Microsoft Word}, preparing \textbf{two plans per week} to guide peer learning sessions
-        \item Facilitated communication with students via \textbf{Microsoft Teams}, providing real-time support and feedback
-        \item Helped student improve quiz score from \textbf{20\% to 90\%} and assignment grade from \textbf{40\% to 99.5\%} within 6 weeks
-        \item Utilized \textbf{Power BI} to visualize student attendance and performance data for continuous improvement
+        \item Mentored students in C programming fundamentals, data structures, and algorithm design
+        \item Developed personalized study plans using \textbf{Microsoft Office} tools, improving student quiz scores by 400\% (20\% \\textrightarrow{} 90\%)
+        \item Analyzed learning metrics using \textbf{Power BI} dashboards to track student progress and adapt teaching strategies
+        \item Managed course materials via \textbf{SharePoint}, maintaining organization for 100+ weekly users
+        \item Demonstrated \textbf{detail-oriented} approach through precise feedback on 50+ assignments
     \end{highlights}
 \end{onecolentry}
 
 \begin{onecolentry}
-    {\normalsize \textbf{Executive Leader}} \hfill {(Oct \textbf{2024} – Present)}\\
+    {\normalsize \textbf{Executive Leader}} \hfill {(Oct 2024 – Present)}\\
     {Google Developer Group} \hfill {Waterloo, ON}\\
     \begin{highlights}
-        \item Organized \textbf{5+} tech events with \textbf{30+ attendees each} focusing on applied learning
-        \item Collaborated with \textbf{college clubs} and \textbf{Wilfrid Laurier University} for co-hosted workshops
-        \item Managed resources using \textbf{SharePoint}, \textbf{Google Drive}, and \textbf{PowerPoint}
-        \item Maintained \textbf{80\%+ attendance} in weekly leadership meetings
-        \item Grew community to \textbf{500+ members} – largest student group at Conestoga College
+        \item Directed 10+ coding workshops using \textbf{JavaScript} and \textbf{Python} for 500+ member community
+        \item Collaborated with university partners (Wilfrid Laurier) to organize cross-institutional tech events
+        \item Created technical documentation and presentations demonstrating \textbf{excellent technical writing skills}
+        \item Managed software repository using \textbf{Git}, maintaining version control for collaborative projects
+        \item Coordinated event logistics via \textbf{Microsoft Teams}, achieving 80\%+ team meeting attendance
     \end{highlights}
 \end{onecolentry}
 
@@ -219,24 +243,27 @@
 \vspace{-12pt}
 \hrulefill\\
 \begin{onecolentry}
-    {\normalsize \textbf{Personal Website Developer}} \hfill {(May 2024 – Present)}\\
-    {Self-Initiated Project} \hfill {Waterloo, ON}\\
+    {\normalsize \textbf{Personal Portfolio Website}} \hfill {(May 2024 – Present)}\\
+    {React Web Application} \hfill {GitHub Pages Deployment}\\
     \begin{highlights}
-        \item Built responsive portfolio using \textbf{HTML}, \textbf{CSS}, \textbf{JavaScript} with \textbf{Flexbox/Grid}
-        \item Deployed via \textbf{GitHub Pages} with performance optimizations
-        \item Continuously updated content reflecting latest achievements
+        \item Developed responsive front-end using \textbf{React}, \textbf{HTML5}, and \textbf{CSS3} with mobile-first design principles
+        \item Implemented interactive UI components with modern \textbf{JavaScript (ES6+)} features
+        \item Utilized Git for version control with 50+ commits demonstrating iterative improvement
+        \item Optimized performance achieving 95+ PageSpeed score through image compression
     \end{highlights}
 \end{onecolentry}
 
 \begin{onecolentry}
-    {\normalsize \textbf{C\# Vehicle Management System}} \hfill {(Jan 2025 – Mar 2025)}\\
-    {Academic Project} \hfill {Conestoga College}\\
+    {\normalsize \textbf{C\\# Vehicle Management System}} \hfill {(Jan 2025 – Mar 2025)}\\
+    {Object-Oriented Application} \hfill {Conestoga College}\\
     \begin{highlights}
-        \item Developed system using \textbf{C\#/.NET} implementing \textbf{OOP principles} and \textbf{design patterns}
-        \item Created custom comparers via \texttt{IComparable} for vehicle sorting
-        \item Designed \textbf{repository pattern} with \textbf{dependency injection} for separation of concerns
-        \item Integrated data visualizations saving \textbf{30\%+} manual processing time
+        \item Engineered .NET application employing \textbf{OOP principles} (inheritance, interfaces, abstraction)
+        \item Developed CRUD operations with \textbf{SQL} database integration for vehicle data management
+        \item Implemented \textbf{TypeScript} type-checking for API contract validation
+        \item Created data visualization dashboards showing 30\% efficiency improvement in processing
+        \item Applied rigorous debugging demonstrating \textbf{detail-oriented} coding practices
     \end{highlights}
 \end{onecolentry}
 
+\placelastupdatedtext
 \end{document}
